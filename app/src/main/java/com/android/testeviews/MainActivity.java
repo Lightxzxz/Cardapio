@@ -1,16 +1,9 @@
 package com.android.testeviews;
 
 import android.os.Bundle;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
@@ -23,28 +16,28 @@ public class MainActivity extends AppCompatActivity {
 
         ListView lista = findViewById(R.id.lista); // criar a lista de itens
 
-        Pessoa lisa = new Pessoa("Lisa Simpson",
-                "200412212", "ok", "lisa_simpson");
-        Pessoa homer = new Pessoa("Homer Simpson",
-                "200412222", "off", "homer_simpson");
-        Pessoa marge = new Pessoa("Marge Simpson",
-                "200412221", "off", "marge_simpson");
-        Pessoa bart = new Pessoa("Bart Simpson",
-                "200412211", "ok", "bart_simpson");
-        Pessoa bart2 = new Pessoa("Bart Simpson",
-                "200412212", "ok", "bart_simpson");
-        Pessoa bart3 = new Pessoa("Bart Simpson",
-                "200412213", "ok", "bart_simpso");
+        Cardapio carnivoro = new Cardapio("carnivoro",
+                "R$39,00", "carnivoro");
+        Cardapio duplo = new Cardapio("duplo",
+                "R$45,00", "duplo");
+        Cardapio picanha = new Cardapio("picanha",
+                "R$50,00", "picanha");
+        Cardapio retro = new Cardapio("retro",
+                "R$29,00", "retro");
+        Cardapio texano = new Cardapio("texano",
+                "R$35,00", "texano");
+        Cardapio tradicional = new Cardapio("tradicional",
+                "R$40,00", "tradicional");
 
-        ArrayList<Pessoa> pessoas = new ArrayList<>();
-        pessoas.add(lisa);
-        pessoas.add(homer);
-        pessoas.add(marge);
-        pessoas.add(bart);
-        pessoas.add(bart2);
-        pessoas.add(bart3);
+        ArrayList<Cardapio> cardapios = new ArrayList<>();
+        cardapios.add(carnivoro);
+        cardapios.add(duplo);
+        cardapios.add(picanha);
+        cardapios.add(retro);
+        cardapios.add(texano);
+        cardapios.add(tradicional);
 
-        ListaAdapter adapter = new ListaAdapter(this, R.layout.layout_lista, pessoas);
+        ListaAdapter adapter = new ListaAdapter(this, R.layout.layout_lista, cardapios);
         lista.setAdapter(adapter);
 
     }
